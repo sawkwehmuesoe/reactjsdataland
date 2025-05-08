@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Working with Bable - Attribute</title>
+    </head>
+    <body>
+
+        <h1>Form Intro</h1>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter your full name" >
+        </div>
+
+        
+        <div id="root">
+
+        </div>
+
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            const inputcity = React.createElement(
+                'input',
+                {type:"text",name:"city",id:'city',className:"form-control",placeholder:'Enter your city'}
+            );
+
+            const formgroup = (
+                <div className="form-group">
+                    <label htmlFor="city">City</label>
+                    {inputcity}
+                </div>
+            );
+
+            
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(formgroup);
+
+        </script>
+    </body>
+</html>
+
+<!-- 4BB -->

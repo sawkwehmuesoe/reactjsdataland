@@ -1,0 +1,11 @@
+=> Bootstrap Install 
+
+https://getbootstrap.com/
+
+npm install bootstrap
+in your main.jsx
+import "bootstrap/dist/css/bootstrap.min.css"
+
+npm install @popperjs/core
+import "bootstrap/dist/js/bootstrap.bundle.min.js"
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

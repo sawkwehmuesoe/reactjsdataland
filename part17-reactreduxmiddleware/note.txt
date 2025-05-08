@@ -1,0 +1,88 @@
+=> Bootstrap Install 
+
+https://getbootstrap.com/
+
+npm install bootstrap
+in your main.jsx
+import "bootstrap/dist/css/bootstrap.min.css"
+
+npm install @popperjs/core
+import "bootstrap/dist/js/bootstrap.bundle.min.js"
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+=> React Router
+https://reactrounter.com/en/main
+
+npm install react-router-dom@latest or npm install react-router@7 (note: you can install from OS nterminal as well)
+
+------------------------------------------------------------------
+React Redux (v9.2.0 , ^2.5.0)
+
+https://redux.js.org/
+
+Installation 
+
+1.install ( React-Redux = npm install react-redux)
+
+npm install @reduxjs/toolkit react-redux
+
+npm install @reduxjs/toolkit 
+npm install redux 
+
+--------------------------------------------------------
+
+=> React Hook = "react" ; "^18.3.1" (9 Jan 2025)
+
+    React v16.8 
+    (just for Functional Components)
+
+    useState()
+    useEffect()
+    useContext()
+
+=> React Redux (third-party library)
+    global state management
+
+    1.Store   = to store "Global State"
+    2.Actions  = Function sthat describe what should happen 
+    3.Reducers = create logic functions to change "State"
+    4.Dispatch = Mechanism to send actions to reducers
+    
+--------------------------------------------------------
+
+=> Chrome Extension 
+
+1. got to chrome webstore 
+https://chromewebstore.google.com 
+
+2. download and install 
+Redux DevTools
+
+--------------------------------------------------------
+
+=> Redux Middleware 
+
+1 create new folder src > middleware 
+
+= read more 
+https://redux.js.org/tutorials/fundamentals/part-4-store
+
+2. create log.js middleware 
+3. use in store.js 
+
+Feature                                             without Middleware
+Synchronous                                         yes
+Asynchronous (API calls,database access,timers)     no 
+Logging / Debugging                                 no
+Authentication & Authoriztion                       no
+Performance Optimization                            no
+
+
+
+--------------------------------------------------------
+
+=> React Middleware + React  (for action log, version ^3.0.6)
+
+https://www.npmjs.com/package/react-logger
+
+npm i --save redux-logger

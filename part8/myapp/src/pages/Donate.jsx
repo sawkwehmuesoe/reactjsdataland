@@ -1,0 +1,17 @@
+import React from "react"
+
+function Donate(){
+    return(
+
+        <div>
+            <h1>Donate</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quas illum. Voluptatem repellat dolore placeat ea quae ab nihil iste tempora sequi, ex aperiam! Nostrum explicabo cupiditate ut aliquam laborum?</p>
+        </div>
+    )
+}
+
+export default Donate;
