@@ -81,8 +81,12 @@ Performance Optimization                            no
 
 --------------------------------------------------------
 
-=> React Middleware + React  (for action log, version ^3.0.6)
+=> React Middleware + React Logger  (for action log, version ^3.0.6)
 
 https://www.npmjs.com/package/react-logger
 
-npm i --save redux-logger
+1.npm i --save redux-logger
+
+
+
+If is it ok or not , you can check at package.json in dependicies.It must be redux-logger

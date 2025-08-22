@@ -42,3 +42,15 @@ export default defineConfig({
 
 npm run dev 
 
+---------------------------------------------------------------------
+
+=> React Redux ( third-party library ) ( current version = "react-redux" : "^9.2.0" )
+  global state management 
+
+  1.Store = to store "Global State"
+  2.Actions = Functions that describe what should happen 
+  3.Recuers = create logic Functions to change "State"
+  4.Dispatch = Mechanism to send action to reducers
+
+---------------------------------------------------------------------
+
