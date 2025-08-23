@@ -1,7 +1,7 @@
 import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios';
 
-
+// thunks to fetch posts 
 export const fetchposts = createAsyncThunk(
   
     'posts/fetchposts',async(obj,{rejectWithValue,fulfillWithValue})=>{
@@ -19,11 +19,28 @@ export const fetchposts = createAsyncThunk(
     }
   );
 
+// thunks to fetch comments 
+
+export const fetchcomments = createAsyncThunk(
+  
+    'data/fetchposts',async(_,{rejectWithValue})=>{
+      try{
+        const res = await axios.get('https://jsonplaceholder.typicode.com/comments');   
+        return res.data;
+
+      }catch(error){
+        return rejectWithValue("Failed to fetch comments, try again!", error);
+      }
+  
+    }
+  );
+
 export const postsSlice = createSlice({
   name: 'posts',
 
   initialState: {
     posts:[],
+    comments:[],
     favorites:[],
     loading:false,
     error:null
@@ -43,8 +60,6 @@ export const postsSlice = createSlice({
       }
 
     },
-
-  
   },
   extraReducers: (builder) => {
     
@@ -65,7 +80,21 @@ export const postsSlice = createSlice({
       .addCase(fetchposts.rejected, (state,action) => {
           state.loading = false;
           state.error = action.payload;
-    })
+      })
+      .addCase(fetchcomments.pending, (state) => {
+          // console.log("Pending");
+
+          state.loading = true;
+          state.error = null;
+      })
+      .addCase(fetchcomments.fulfilled,(state,action)=>{
+        state.loading = false;
+        state.comments = action.payload;
+      })
+      .addCase(fetchcomments.rejected, (state,action) => {
+          state.loading = false;
+          state.error = action.payload;
+      })
   },
 })
 

@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { togglefavorite,fetchposts } from './store/postsreducer.js' // after thunk
+import { togglefavorite,fetchposts,fetchcomments } from './store/postsreducer.js' // after thunk
 
 
 function App() {
 
-  const {posts,favorites,loading,error} = useSelector(state => state.posts);
+  const {posts,comments,favorites,loading,error} = useSelector(state => state.posts);
   // console.log(users);
 
   const dispatch = useDispatch();
@@ -16,6 +16,15 @@ function App() {
     dispatch(fetchposts())
     .unwrap()
     .then(response=>{
+      // console.log(response);
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+
+     dispatch(fetchcomments())
+    .unwrap()
+    .then(response=>{
       console.log(response);
     })
     .catch(err=>{
@@ -23,7 +32,25 @@ function App() {
     })
 
 
-  },[])
+  },[]);
+
+  // Group comments by postID 
+
+  const commentsbypost = comments.reduce((init,comment)=>{
+    init[comment.postId] = init[comment.postId] || [];
+    init[comment.postId].push(comment);
+    return init;
+  },{});
+
+  // console.log(commentsbypost);
+
+  // explain sample codes 
+
+  // {
+  //   1:[comment1,comment2],
+  //   2:[comment3],
+  //   3:[comment4,comment5]
+  // }
 
   return (
    
@@ -38,6 +65,28 @@ function App() {
                 <li key={post.id} >
                   <h3>{post.title}</h3>
                   <p>{post.body}</p>
+
+                  <h3>Comments</h3>
+
+                <ul>
+
+                  {
+                    commentsbypost[post.id] ? (
+                      commentsbypost[post.id].map(comment => (
+                        <li key={comment.id}>
+                          <strong>{comment.name}</strong> : {comment.body}
+                        </li>
+                      ))
+                    ) : (
+                      <p>No comments available</p>
+                    )
+                  }
+
+                  
+
+                
+                </ul>
+
                   <button type='button' onClick={()=>dispatch(togglefavorite(post.id))}>
                     {favorites.includes(post.id) ? "Unfavourite" : "Favourite"}
                   </button>
@@ -47,8 +96,21 @@ function App() {
              
             </ul>
 
+            {/* <h3>Comments</h3>
+
+            <ul>
+
+              {comments.map(comment=>(
+                <li key={comment.id} >
+                  <strong>{comment.name}</strong> : {comment.body}
+                </li>
+              ))}
+
+             
+            </ul> */}
+
         </div>
-    
+
   )
 }
 
