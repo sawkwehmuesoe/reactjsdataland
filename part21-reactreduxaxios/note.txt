@@ -77,3 +77,18 @@ https://www.npmjs.com/package/axios
 npm install axios
 
 --------------------------------------------------------
+
+=> Set up Express API (backend)
+
+mkdir expressapi 
+cd expressapi 
+npm init -y 
+npm install express cors 
+
+create server.js  
+
+node server.js
+
+"cors": "^2.8.5",
+"express": "^5.1.0"
+--------------------------------------------------------

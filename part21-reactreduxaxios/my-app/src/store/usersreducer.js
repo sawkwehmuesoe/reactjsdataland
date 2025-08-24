@@ -13,6 +13,33 @@ export const fetchusers = createAsyncThunk('data/fetchusers',async(obj,{rejectWi
     }
 }); 
 
+export const adduser = createAsyncThunk('data/adduser',async (obj,{rejectWithValue})=>{
+    try{
+        const res = await axios.post(BASEURL);
+        return res.data;
+    }catch(err){
+        return rejectWithValue("Something went wrong in fetchuser",err);
+    }
+});
+
+export const edituser = createAsyncThunk('data/edituser',async (obj,{rejectWithValue})=>{
+    try{
+        const res = await axios.put(`${BASEURL}/${obj.id}`);
+        return res.data;
+    }catch(err){
+        return rejectWithValue("Something went wrong in fetchuser",err);
+    }
+});
+
+export const deleteuser = createAsyncThunk('data/edituser',async (obj,{rejectWithValue})=>{
+    try{
+        const res = await axios.delete(`${BASEURL}/${obj.id}`);
+        return res.data;
+    }catch(err){
+        return rejectWithValue("Something went wrong in fetchuser",err);
+    }
+});
+
 const userSlice = createSlice({
     name:"users",
     initialState:{
