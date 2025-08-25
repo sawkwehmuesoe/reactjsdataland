@@ -3,6 +3,8 @@ import './App.css'
 import {BrowserRouter as Router,Routes,Route} from 'react-router'
 
 import UserList from "./features/users/UsersList"
+import AddUser from "./features/users/AddUser"
+import EditUser from "./features/users/EditUser"
 
 function App() {
   
@@ -12,6 +14,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<UserList />} />
+          <Route path="/add" element={<AddUser />} />
+          <Route path="/edit/:id" element={<EditUser />} />
         </Routes>
       </Router>
     </section>

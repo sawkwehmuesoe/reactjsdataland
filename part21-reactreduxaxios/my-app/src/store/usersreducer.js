@@ -1,7 +1,8 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
-const BASEURL = `https://jsonplaceholder.typicode.com/users`; 
+// const BASEURL = `https://jsonplaceholder.typicode.com/users`; 
+const BASEURL = `http://localhost:5000/api/users`; 
 
 // Thunk to fetch users 
 export const fetchusers = createAsyncThunk('data/fetchusers',async(obj,{rejectWithValue})=>{
@@ -66,6 +67,15 @@ const userSlice = createSlice({
             .addCase(fetchusers.rejected,(state,action)=>{
                 state.loading = false;
                 state.error = action.payload;
+            })
+            .addCase(adduser.fulfilled,(state,action)=>{
+                state.users.push(action.payload);
+            })
+            // .addCase(edituser.fulfilled,(state,action)=>{
+              
+            // })
+            .addCase(deleteuser.fulfilled,(state,action)=>{
+                return state.users.filter(user=>user.id !== action.payload);
             })
     }
 })
