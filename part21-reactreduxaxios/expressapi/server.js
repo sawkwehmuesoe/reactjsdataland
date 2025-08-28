@@ -45,7 +45,14 @@ app.put("/api/users/:id",(req,res)=>{
 app.delete("/api/users/:id",(req,res)=>{
 
     const {id} = req.params;
+
+    const user = users.find(user => user.id === id);
+
+    if(!user){
+        return res.status(404).json({message:"User not found"});
+    }
+
     users = users.filter(user => user.id != id);
-    res.json({message:"Deleted"})
+    res.json({id})
 
 });

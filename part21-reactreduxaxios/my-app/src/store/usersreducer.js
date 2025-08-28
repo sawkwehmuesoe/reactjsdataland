@@ -16,28 +16,29 @@ export const fetchusers = createAsyncThunk('data/fetchusers',async(obj,{rejectWi
 
 export const adduser = createAsyncThunk('data/adduser',async (obj,{rejectWithValue})=>{
     try{
-        const res = await axios.post(BASEURL);
+        const res = await axios.post(BASEURL,obj);
+        // console.log(obj); // {name: '1', email: '2'}
         return res.data;
     }catch(err){
-        return rejectWithValue("Something went wrong in fetchuser",err);
+        return rejectWithValue("Something went wrong in add user",err);
     }
 });
 
 export const edituser = createAsyncThunk('data/edituser',async (obj,{rejectWithValue})=>{
     try{
-        const res = await axios.put(`${BASEURL}/${obj.id}`);
+        const res = await axios.put(`${BASEURL}/${obj.id}`,obj);
         return res.data;
     }catch(err){
-        return rejectWithValue("Something went wrong in fetchuser",err);
+        return rejectWithValue("Something went wrong in edit user",err);
     }
 });
 
-export const deleteuser = createAsyncThunk('data/edituser',async (obj,{rejectWithValue})=>{
+export const deleteuser = createAsyncThunk('data/deleteuser',async (id,{rejectWithValue})=>{
     try{
-        const res = await axios.delete(`${BASEURL}/${obj.id}`);
+        const res = await axios.delete(`${BASEURL}/${id}`);
         return res.data;
     }catch(err){
-        return rejectWithValue("Something went wrong in fetchuser",err);
+        return rejectWithValue("Something went wrong in delete user",err);
     }
 });
 
@@ -71,11 +72,15 @@ const userSlice = createSlice({
             .addCase(adduser.fulfilled,(state,action)=>{
                 state.users.push(action.payload);
             })
-            // .addCase(edituser.fulfilled,(state,action)=>{
-              
-            // })
+            .addCase(edituser.fulfilled,(state,action)=>{
+                // state.loading = false;
+                // state.error = null;
+
+                const index = state.users.findIndex(user => user.id === action.payload.id);
+                if(index !== -1) state.users[index] = action.payload;
+            })
             .addCase(deleteuser.fulfilled,(state,action)=>{
-                return state.users.filter(user=>user.id !== action.payload);
+                state.users = state.users.filter(user=>user.id !== action.payload);
             })
     }
 })

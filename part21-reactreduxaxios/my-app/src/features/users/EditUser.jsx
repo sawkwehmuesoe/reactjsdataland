@@ -31,7 +31,7 @@ export default function EditUser(){
             <form onSubmit={submitHandler}>
                 <input type="text" placeholder="Enter Your Name" value={name} onChange={(e)=>setName(e.target.value)} />
                 <input type="text" placeholder="Enter Your Email" value={email} onChange={(e)=>setEmail(e.target.value)} />
-                <button type="submit">Submit</button>
+                <button type="submit">Update</button>
             </form>
         </div>
     )
