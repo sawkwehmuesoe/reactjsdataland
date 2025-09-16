@@ -1,4 +1,8 @@
 import React from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import favicon from "../assets/img/fav/favicon.png"
+import { Link } from "react-router";
 
 const Footer = ()=>{
     return (
@@ -10,20 +14,20 @@ const Footer = ()=>{
 
 
                         <div class="col-md-3 col-sm-6">
-                            <h5 class="mb-3"><img src="./assets/img/fav/favicon.png" width="70px" alt="footericon" />About Plannco</h5>
+                            <h5 class="mb-3"><img src={favicon} width="70px" alt="footericon" />About Plannco</h5>
                             <p class="small">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                         </div>
 
                         <div class="col-md-3 col-sm-6">
                             <h5 class="mb-3">Visit Us</h5>
                             <ul class="list-unstyled">
-                                <li><a href="#index.html" class="footerlinks">Home</a></li>
-                                <li><a href="#about" class="footerlinks">About Us</a></li>
-                                <li><a href="#properties" class="footerlinks">Properties</a></li>
-                                <li><a href="#services" class="footerlinks">Services</a></li>
-                                <li><a href="#customers" class="footerlinks">Customer</a></li>
-                                <li><a href="#furniture" class="footerlinks">Furniture</a></li>
-                                <li><a href="#contact" class="footerlinks">Contact</a></li>
+                                <li><Link to="/" class="footerlinks">Home</Link></li>
+                                <li><Link to="/abouts" class="footerlinks">About Us</Link></li>
+                                <li><Link to="/properties" class="footerlinks">Properties</Link></li>
+                                <li><Link to="/services" class="footerlinks">Services</Link></li>
+                                <li><Link to="/customers" class="footerlinks">Customer</Link></li>
+                                <li><Link to="/furnitures" class="footerlinks">Furniture</Link></li>
+                                <li><Link to="/contacts" class="footerlinks">Contact</Link></li>
                             </ul>
                         </div>
 
@@ -51,9 +55,9 @@ const Footer = ()=>{
                     <div class="text-light border-top pt-4 d-flex justify-content-between">
                         <p>&copy; <span id="getyear"></span> Copyright, Inc,All rights reserved</p>
                         <ul class="list-unstyled d-flex">
-                            <li ><a href="#" class="nav-link"><i class="fab fa-twitter"></i></a></li>
-                            <li class="mx-3"><a href="#" class="nav-link"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#" class="nav-link"><i class="fab fa-facebook"></i></a></li>
+                            <li ><a href="#" class="nav-link"><FontAwesomeIcon icon="fa-brands fa-x-twitter" /></a></li>
+                            <li class="mx-3"><a href="#" class="nav-link"><FontAwesomeIcon icon="fa-brands fa-square-instagram" /></a></li>
+                            <li><a href="#" class="nav-link"><FontAwesomeIcon icon="fa-brands fa-square-facebook" /></a></li>
                         </ul>
                     </div>
                 </div>

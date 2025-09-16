@@ -4,7 +4,6 @@ import AboutUs from '../components/AboutUs'
 import BackToTop from '../components/BackToTop'
 import Contact from '../components/Contact'
 import Customers from '../components/Customers'
-import Footer from '../components/Footer'
 import Furniture from '../components/Furniture'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
@@ -26,7 +25,7 @@ const HomePage = ()=>{
             <Services/>
 
             <BackToTop/>
-            <Footer/>
+            
         </>
     )
 };

@@ -117,8 +117,34 @@ npm install bootstrap @popperjs/core
         import 'bootstrap/dist/css/bootstrap.min.css'
         import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-
-
-
 --------------------------------------------------------
+
+=> Install Fontawesome (v^5.3.7)
+
+https://docs.fontawesome.com/web/use-with/react 
+
+    (i) install 
+        npm i --save @fortawesome/fontawesome-svg-core 
+        npm i --save @fortawesome/react-fontawesome@latest
+        npm i --save @fortawesome/free-solid-svg-icons
+        npm i --save @fortawesome/free-regular-svg-icons
+        npm i --save @fortawesome/free-brands-svg-icons
+
+    (ii) Create a Fontawesome config file 
+    src > lib > fontawesome.js
+
+    import { fab } from '@fortawesome/free-brands-svg-icons'
+    import { far } from '@fortawesome/free-regular-svg-icons'
+    import { fas } from '@fortawesome/free-solid-svg-icons'
+
+    library.add(fab,far,fas) 
+
+    (iii) Import Config to src/main.jsx 
+    src > main.jsx
+
+
+    (iv) Usage in Components 
+        import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
 

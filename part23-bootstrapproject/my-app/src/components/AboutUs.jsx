@@ -1,4 +1,5 @@
 import React from "react"
+import StaffGirl from "../assets/img/users/staffgirl1.png";
 
 const AboutUs = ()=>{
     return (
@@ -10,7 +11,7 @@ const AboutUs = ()=>{
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="./assets/img/users/staffgirl1.png"  />
+                            <img src={StaffGirl}  />
                         </div>
                         <div class="col-sm-6 text-center text-light">
                             <div class="row">
