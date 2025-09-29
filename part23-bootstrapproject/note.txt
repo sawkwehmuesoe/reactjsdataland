@@ -146,5 +146,80 @@ https://docs.fontawesome.com/web/use-with/react
     (iv) Usage in Components 
         import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+--------------------------------------------------------
+
+=> Install jQuery and Inject (^3.7.1,^5.0.5)
+
+https://jquery.com/download/
+https://www.npmjs.com/package/@rollup/plugin-inject
+
+    (i) install jQuery 
+    npm install jquery 
+
+    (ii) install Inject 
+    npm install @rollup/plugin-inject --save-dev
+
+    --------------------------
+
+    (iii) Vite config setting for Inject 
+    // vite.config.js
+
+    import { defineConfig } from 'vite'
+    import react from '@vitejs/plugin-react'
+
+    // https://vite.dev/config/
+    export default defineConfig({
+    plugins: [
+        react(),
+        inject({
+        $:'jquery',
+        jQuery:'jquery'
+        })
+    ],
+    optimizeDeps:{
+        include:['jquery']
+    }
+    })
+
+    (iv) Import jQuery to your Component
+
+    import React,{useEffect, useState} from "react"
+    import $ from 'jquery' 
+
+    useEffect(()=>{
+        $('.titles').css('color','red')
+    })
 
 
+--------------------------------------------------------
+
+
+=> Install lightbox2 (v 2.11.5)
+
+    https://www.npmjs.com/package/lightbox2
+
+    (i) install lightbox2 
+    npm install lightbox2 --save
+
+    (ii) Import 
+    src/main.jsx or your Component 
+
+    import 'lightbox2/dist/css/lightbox.min.css'
+    import 'lightbox2/dist/js/lightbox.min.js'
+
+    import 'lightbox2/dist/css/lightbox.min.css'
+    import 'lightbox2/dist/js/lightbox.min.js'
+
+    createRoot(document.getElementById('root')).render(
+    <div>
+        <Router>
+        <App />
+        </Router>
+    </div>
+    )
+        
+
+--------------------------------------------------------
+
+
+   

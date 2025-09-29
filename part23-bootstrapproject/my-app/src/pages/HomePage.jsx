@@ -9,6 +9,7 @@ import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import Properties from '../components/Properties'
 import Services from '../components/Services'
+import Clients from "../components/Clients"
 
 const HomePage = ()=>{
     return (
@@ -23,6 +24,7 @@ const HomePage = ()=>{
             
             <Properties/>
             <Services/>
+            <Clients/>
 
             <BackToTop/>
             

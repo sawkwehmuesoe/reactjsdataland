@@ -1,4 +1,5 @@
-import React,{useState} from "react"
+import React,{useEffect, useState} from "react"
+import $ from 'jquery' // import jquery to your component
 
 // import all image 
 import image1 from "../assets/img/gallery/image1.jpg"
@@ -10,6 +11,10 @@ import image6 from "../assets/img/gallery/image6.jpg"
 import image7 from "../assets/img/gallery/image7.jpg"
 import image8 from "../assets/img/gallery/image8.jpg"
 import image9 from "../assets/img/gallery/image9.jpg"
+import building from "../assets/img/etc/building4.png"
+
+import 'lightbox2/dist/css/lightbox.min.css'
+import 'lightbox2/dist/js/lightbox.min.js'
 
 const Properties = ()=>{
 
@@ -32,53 +37,64 @@ const Properties = ()=>{
         {id:16,image:image7,category:"furniture",title:"Bed Frame"}
     ];
 
+    const listfilters = ["all","house","decoration","furniture","office"];
+
     const [activeFilter,setActiveFilter] = useState("all");
 
     // Filter properties based on active or filter category 
     const filterproperties = activeFilter === "all" ? properties : properties.filter(property => property.category === activeFilter);
 
+    // useEffect(()=>{
+    //     $('.titles').css('color','red')
+    // })
+
     return (
         <>
-            <section id="properties" class="py-5">
+            <section id="properties" className="py-5">
 		
-                <div class="container-fluid">
+                <div className="container-fluid">
                     {/* start title */}
 
-                    <div class="row text-center">
-                        <div class="col">
-                            <h3 class="titles">Properties</h3>
+                    <div className="row text-center">
+                        <div className="col">
+                            <h3 className="titles">Properties</h3>
                         </div>
                     </div>
 
                     {/* end title */}
 
-                    <ul class="list-inline text-center text-uppercase fw-bold ">
-                        <li class="list-inline-item propertylists" data-filter="all">All<span class="text-muted mx-md-5 mx-3">/</span></li>
-                        <li class="list-inline-item propertylists" data-filter="house">House<span class="text-muted mx-md-5 mx-3">/</span></li>
-                        <li class="list-inline-item propertylists" data-filter="decoration">Decoration<span class="text-muted mx-md-5 mx-3">/</span></li>
-                        <li class="list-inline-item propertylists" data-filter="furniture">Furniture<span class="text-muted mx-md-5 mx-3">/</span></li>
-                        <li class="list-inline-item propertylists" data-filter="office">Office<span class="text-muted mx-md-5 mx-3"></span></li>
+                    <ul className="list-inline text-center text-uppercase fw-bold ">
+                        {/* <li className="list-inline-item propertylists" data-filter="all">All<span className="text-muted mx-md-5 mx-3">/</span></li>
+                        <li className="list-inline-item propertylists" data-filter="house">House<span className="text-muted mx-md-5 mx-3">/</span></li>
+                        <li className="list-inline-item propertylists" data-filter="decoration">Decoration<span className="text-muted mx-md-5 mx-3">/</span></li>
+                        <li className="list-inline-item propertylists" data-filter="furniture">Furniture<span className="text-muted mx-md-5 mx-3">/</span></li>
+                        <li className="list-inline-item propertylists" data-filter="office">Office<span className="text-muted mx-md-5 mx-3"></span></li> */}
+
+                        {
+                            listfilters.map((listfilter,idx)=>(
+                                <li key={idx} className={`list-inline-item propertylists ${ activeFilter === listfilter ? "activeitems" : ""}`} onClick={()=>setActiveFilter(listfilter)}>
+                                    {listfilter}
+                                    {listfilter !== "office" && <span className="text-muted mx-md-5 mx-3">/</span>}
+                                </li>
+                            ))
+                        }
                     </ul>
 
-                    <div class="container-fluid">
+                    <div className="container-fluid">
                         
-                        <div class="d-flex flex-wrap justify-content-center">
-                            <div class="filters house"><a href={image1} data-lightbox='property' data-title="image1"><img src={image1} alt="img1" width="200px" /></a></div>
-                            <div class="filters house"><a href={image2} data-lightbox='property' data-title="image2"><img src={image2} alt="img2" width="200px" /></a></div>
-                            <div class="filters house"><a href={image3} data-lightbox='property' data-title="image3"><img src={image3} alt="img3" width="200px" /></a></div>
-                            <div class="filters decoration"><a href={image4} data-lightbox='property' data-title="image4"><img src={image4} alt="img4" width="200px" /></a></div>
-                            <div class="filters decoration"><a href={image5} data-lightbox='property'  data-title="image5"><img src={image5} alt="img5" width="200px" /></a></div>
-                            <div class="filters decoration"><a href={image6} data-lightbox='property' data-title="image6"><img src={image6} alt="img6" width="200px" /></a></div>
-                            <div class="filters decoration"><a href={image7} data-lightbox='property' data-title="image7"><img src={image7} alt="img7" width="200px" /></a></div>
-                            <div class="filters decoration"><a href={image8} data-lightbox='property' data-title="image8"><img src={image8} alt="img8" width="200px" /></a></div>
-                            <div class="filters furniture"><a href={image9} data-lightbox='property' data-title="image9"><img src={image9} alt="img9" width="200px" /></a></div>
-                            <div class="filters office"><a href={image1} data-lightbox='property' data-title="image10"><img src={image1} alt="img10" width="200px" /></a></div>
-                            <div class="filters office"><a href={image2} data-lightbox='property' data-title="image11"><img src={image2} alt="img1" width="200px" /></a></div>
-                            <div class="filters office"><a href={image3} data-lightbox='property' data-title="image12"><img src={image3} alt="img11" width="200px" /></a></div>
-                            <div class="filters decoration"><a href={image4} data-lightbox='property' data-title="image13"><img src={image4} alt="img12" width="200px" /></a></div>
-                            <div class="filters furniture"><a href={image5} data-lightbox='property' data-title="image14"><img src={image5} alt="img13" width="200px" /></a></div>
-                            <div class="filters furniture"><a href={image6} data-lightbox='property' data-title="image15"><img src={image6} alt="img1" width="200px" /></a></div>
-                            <div class="filters furniture"><a href={image7} data-lightbox='property' data-title="image16"><img src={image7} alt="img14" width="200px" /></a></div>
+                        <div className="d-flex flex-wrap justify-content-center">
+
+                            {
+                                filterproperties.map(propertie=>(
+                                    <div key={propertie.id} className={`filters ${propertie.category}`}>
+                                        <a href={propertie.image} data-lightbox='property' data-title={propertie.title}>
+                                            <img src={propertie.image} alt={propertie.title} width="200px" />
+                                        </a>
+                                    </div>
+                                ))
+                            }
+
+                           
                         </div>
                         
 
@@ -89,6 +105,26 @@ const Properties = ()=>{
                 </div>
 
             </section>
+
+            <section className="p-5 missions">
+
+                <div className="container">
+
+                    <div className="row align-items-center">
+                        <div className="col-lg-5 text-center">
+                            <img src={building} className="advimages"  alt="" />
+                        </div>
+
+                        <div className="col-lg-7 text-white text-center text-lg-end advtexts">
+                            <h1>What is Plannco & How we started our business in Myanmar</h1>
+                            <p className="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </section>
+
         </>
     )
 };
