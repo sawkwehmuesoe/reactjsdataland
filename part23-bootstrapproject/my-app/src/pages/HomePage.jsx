@@ -10,6 +10,8 @@ import Navbar from '../components/Navbar'
 import Properties from '../components/Properties'
 import Services from '../components/Services'
 import Clients from "../components/Clients"
+import Adv from "../components/Adv"
+import Quote from "../components/Quote"
 
 const HomePage = ()=>{
     return (
@@ -18,13 +20,18 @@ const HomePage = ()=>{
             <Navbar/>
             <AboutUs/>
 
-            <Contact/>
-            <Customers/>
-            <Furniture/>
+            
+       
             
             <Properties/>
+            <Adv/>
             <Services/>
             <Clients/>
+
+            <Customers/>
+            <Quote/>
+            <Furniture/>
+            <Contact/>
 
             <BackToTop/>
             

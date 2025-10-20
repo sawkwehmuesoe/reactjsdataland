@@ -11,7 +11,6 @@ import image6 from "../assets/img/gallery/image6.jpg"
 import image7 from "../assets/img/gallery/image7.jpg"
 import image8 from "../assets/img/gallery/image8.jpg"
 import image9 from "../assets/img/gallery/image9.jpg"
-import building from "../assets/img/etc/building4.png"
 
 import 'lightbox2/dist/css/lightbox.min.css'
 import 'lightbox2/dist/js/lightbox.min.js'
@@ -105,26 +104,6 @@ const Properties = ()=>{
                 </div>
 
             </section>
-
-            <section className="p-5 missions">
-
-                <div className="container">
-
-                    <div className="row align-items-center">
-                        <div className="col-lg-5 text-center">
-                            <img src={building} className="advimages"  alt="" />
-                        </div>
-
-                        <div className="col-lg-7 text-white text-center text-lg-end advtexts">
-                            <h1>What is Plannco & How we started our business in Myanmar</h1>
-                            <p className="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-            </section>
-
         </>
     )
 };
